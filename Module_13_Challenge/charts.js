@@ -96,6 +96,7 @@ function buildCharts(sample) {
       x: xticks,
       y: yticks,
       type: "bar",
+      hovertext: otu_labels.slice(0, 10).reverse(),
       orientation: "h"
     };
 
@@ -112,7 +113,7 @@ function buildCharts(sample) {
     var bubbleTrace = {
       x: otu_ids,
       y: sample_values,
-      text: otu_labels,
+      hovertext: otu_labels,
       mode: 'markers',
       marker: {
         color: otu_ids,
