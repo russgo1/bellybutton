@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belly Button Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+      </div>
+    </div>
+    <div class="text-center">
+    <p>Use the interactive charts below to explore the dataset</p>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar" class="graph"></div>
+        <h4>Bar Graph:</h4><br>
+        <p>
+          This graph displays the amount of bacteria found for each of the 10 most populus bacteria in each test subject.
+          OTU ID numbers for each bacterium mark the Y-Axis, and the amount of cultures found mark the X-Axis.
+        </p>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge" class="graph"></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h4>Scrub Gauge:</h4>
+        <p>
+          The gauge above dsiplays the number of times per week each subject's belly button was scrubbed. 
+          Washing the belly button may affect the number or type of bacteria found there. The number
+          in the center of the gauge shows the number of scrubs per week. As the number increases, the black bar
+          fills the gauge from left (no scrubs) to right (10 scrubs each week).
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble" class="graph"></div>
+        <h4>Bubble Chart:</h4>
+        <p>
+          This chart displays the relative amounts found of each bacterial culture. Each bubble represents
+          a different culutre. The larger the bubble, the more cultures found. Additionally, more numerous
+          cultures appear higher up the Y-Axis. Each bubble's position along the X-Axis represents the type of
+          bacteria, so that they are spread over the area of the chart. The X-Axis value is the culture's unique
+          ID number. 
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
+</body>
+
+</html>
